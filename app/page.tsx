@@ -8,7 +8,7 @@ import vectorUp from "@public/form-vector-up.svg";
 
 export default function Page() {
   return (
-    <main className="grid place-items-center relative top-0 left-0 w-[100vw] h-[100vh] bg-gradient-to-b from-[#ED6BD6] to-[#9769C9] px-[7%] md:px-[120px] py-[76.5px]">
+    <main className="grid place-items-center relative top-0 left-0 w-[100vw] h-[100vh] bg-gradient-to-b from-[#ED6BD6] to-[#9769C9] px-[7%] md:px-[120px] lg:px-[280px] xl:px-[120px] py-[76.5px] select-none">
       <svg className="absolute left-0 bottom-0 sm:w-[581px] sm:h-[564px] h-[281px] w-[290px]" viewBox="0 0 581 564" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M148 148C40.4 93.6 4.5 26.6667 0 0V564H580.5C580.833 532.833 558.3 447.3 465.5 354.5C349.5 238.5 282.5 216 148 148Z" fill="url(#paint0_linear_6_7)"/>
         <defs>
@@ -27,34 +27,36 @@ export default function Page() {
         </linearGradient>
         </defs>
       </svg>
-      <div className="relative z-[1] w-[100%] h-[100%] flex sm:display-none bg-amber-50 rounded-[22px] p-11">
-        {/* <div>
+      <div className="relative z-[1] w-[100%] h-[100%] flex xl:grid xl:grid-cols-2 sm:display-none bg-amber-50 rounded-[22px] max-w-[1200px]">
+        <div className="relative bg-[#5C228F] rounded-bl-[22px] rounded-tl-[22px] p-10 text-[white] hidden xl:block">
           <Image 
             src={largeLogo}
             alt="Logo"
             width={233}
             height={70}
           />
-          <h1>Welcome</h1>
-          <p>Sign in to continue access</p>
-          <div></div>
-          <div></div>
-          <div></div>
-          <span>www.example.com</span>
+          <h1 className="absolute top-[35%] left-[50%] text-[50px] translate-x-[-50%] font-semibold">Welcome</h1>
+          <p className="absolute top-[45%] left-[50%] font-light">Sign in to<br/>continue access</p>
+          <div className="w-[130px] h-[130px] rounded-[50%] bg-gradient-to-l from-[#7A15D2] to-[#24B3D6] absolute right-50"></div>
+          <div className="w-[100px] h-[100px] rounded-[50%] bg-gradient-to-b from-[#A6129E] to-[#6026AE] absolute top-[44%] left-[20%]"></div>
+          <div className="w-[55px] h-[55px] rounded-[50%] bg-gradient-to-b from-[#A6129E] to-[#6026AE] absolute bottom-[10%] right-[10%]"></div>
+          <span className="absolute bottom-10 z-[2] font-semibold text-[20px] left-15">www.example.com</span>
           <Image 
+            className="absolute top-0 right-0"
             src={vectorUp}
             alt="vectorUp"
           />
           <Image 
+            className="absolute rounded-bl-[22px] left-0 bottom-0"
             src={vectorDown}
             alt="vectorDown"
           />
-        </div> */}
-        <form className="flex flex-col items-center w-full">
-          <h1 className="text-[45px] font-bold mb-[36px]">Sign In</h1>
+        </div>
+        <form className="flex flex-col items-center w-full p-11 md:p-14">
+          <h1 className="text-[42px] sm:text-[45px] font-bold mb-[36px]">Sign In</h1>
           <div className="bg-gradient-to-r from-[#8353C1] to-[#E136C0] pb-[1px] w-full mb-5">
             <input 
-              className="w-full py-3 bg-[#FFFBEB] outline-none"
+              className="w-full py-3 bg-[#FFFBEB] outline-none h-full"
               type="text" 
               id="email" 
               name="email" 
@@ -70,16 +72,19 @@ export default function Page() {
               placeholder="Password"
             />
           </div>
-          <button className="relative bg-gradient-to-r from-[#8353C1] to-[#E136C0] w-full py-3.5 font-extralight tracking-[2px] text-white">
+          <button className="relative bg-gradient-to-r from-[#8353C1] to-[#E136C0] w-full py-3.5 font-extralight tracking-[2px] text-white mb-[51px] cursor-pointer">
             <span>CONTINUE</span>
             <FontAwesomeIcon
-              className="absolute right-[5%] top-[50%] translate-y-[-50%]"
+              className="absolute right-[5%] top-[50%] translate-y-[-50%] text-2xl"
               icon={faChevronRight} 
             />
           </button>
-          <p>Or Connect with</p>
-          <button>
-            <FontAwesomeIcon icon={faGoogle} />
+          <p className="text-[#c7c7c7] mb-[63px]">Or Connect with</p>
+          <button className="border w-full py-3 text-white bg-gradient-to-r from-[#D40015] to-[#FF5E66] cursor-pointer">
+            <FontAwesomeIcon 
+              className="mr-2 text-2xl"
+              icon={faGoogle} 
+            />
             Sign In With Google
           </button>
         </form>
