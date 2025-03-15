@@ -30,7 +30,7 @@ export default function Page() {
       </svg>
 
       {/* Sign up */}
-      <div className="relative z-[1] w-[100%] h-[100%] flex xl:grid xl:grid-cols-2 sm:display-none bg-amber-50 rounded-[22px] max-w-[1200px]">
+      <div className="relative z-[1] w-[100%] h-[100%] flex xl:grid xl:grid-cols-2 sm:display-none bg-amber-50 rounded-[22px] max-w-[1200px] shadow-2xl">
         <div className="relative bg-[#5C228F] rounded-bl-[22px] rounded-tl-[22px] p-10 text-[white] hidden xl:block">
           <Image 
             src={largeLogo}

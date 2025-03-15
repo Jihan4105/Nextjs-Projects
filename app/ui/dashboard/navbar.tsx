@@ -6,66 +6,62 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
 import { faBell } from "@fortawesome/free-regular-svg-icons"
 import { styled } from '@mui/material/styles';
-import Switch, { SwitchProps } from '@mui/material/Switch';
+import Switch from '@mui/material/Switch';
 import Logo from "@public/small-white-logo.png"
+import profileSample from "@public/profile-sample.jpg"
 
-const IOSSwitch = styled((props: SwitchProps) => (
-  <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
-))(({ theme }) => ({
-  width: 42,
-  height: 26,
-  padding: 0,
+const MaterialUISwitch = styled(Switch)(({ theme }) => ({
+  width: 62,
+  height: 34,
+  padding: 7,
   '& .MuiSwitch-switchBase': {
+    margin: 1,
     padding: 0,
-    margin: 2,
-    transitionDuration: '300ms',
+    transform: 'translateX(6px)',
     '&.Mui-checked': {
-      transform: 'translateX(16px)',
       color: '#fff',
+      transform: 'translateX(22px)',
+      '& .MuiSwitch-thumb:before': {
+        backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 20 20"><path fill="${encodeURIComponent(
+          '#fff',
+        )}" d="M4.2 2.5l-.7 1.8-1.8.7 1.8.7.7 1.8.6-1.8L6.7 5l-1.9-.7-.6-1.8zm15 8.3a6.7 6.7 0 11-6.6-6.6 5.8 5.8 0 006.6 6.6z"/></svg>')`,
+      },
       '& + .MuiSwitch-track': {
-        backgroundColor: '#9000FF',
         opacity: 1,
-        border: 0,
+        backgroundColor: '#9000FF',
         ...theme.applyStyles('dark', {
-          backgroundColor: '#2ECA45',
+          backgroundColor: '#8796A5',
         }),
       },
-      '&.Mui-disabled + .MuiSwitch-track': {
-        opacity: 0.5,
-      },
-    },
-    '&.Mui-focusVisible .MuiSwitch-thumb': {
-      color: '#33cf4d',
-      border: '6px solid #fff',
-    },
-    '&.Mui-disabled .MuiSwitch-thumb': {
-      color: theme.palette.grey[100],
-      ...theme.applyStyles('dark', {
-        color: theme.palette.grey[600],
-      }),
-    },
-    '&.Mui-disabled + .MuiSwitch-track': {
-      opacity: 0.7,
-      ...theme.applyStyles('dark', {
-        opacity: 0.3,
-      }),
     },
   },
   '& .MuiSwitch-thumb': {
-    boxSizing: 'border-box',
-    backgroundColor: "#AC4AF8",
-    width: 22,
-    height: 22,
+    backgroundColor: '#A534F8',
+    width: 32,
+    height: 32,
+    '&::before': {
+      content: "''",
+      position: 'absolute',
+      width: '100%',
+      height: '100%',
+      left: 0,
+      top: 0,
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+      backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 20 20"><path fill="${encodeURIComponent(
+        '#fff',
+      )}" d="M9.305 1.667V3.75h1.389V1.667h-1.39zm-4.707 1.95l-.982.982L5.09 6.072l.982-.982-1.473-1.473zm10.802 0L13.927 5.09l.982.982 1.473-1.473-.982-.982zM10 5.139a4.872 4.872 0 00-4.862 4.86A4.872 4.872 0 0010 14.862 4.872 4.872 0 0014.86 10 4.872 4.872 0 0010 5.139zm0 1.389A3.462 3.462 0 0113.471 10a3.462 3.462 0 01-3.473 3.472A3.462 3.462 0 016.527 10 3.462 3.462 0 0110 6.528zM1.665 9.305v1.39h2.083v-1.39H1.666zm14.583 0v1.39h2.084v-1.39h-2.084zM5.09 13.928L3.616 15.4l.982.982 1.473-1.473-.982-.982zm9.82 0l-.982.982 1.473 1.473.982-.982-1.473-1.473zM9.305 16.25v2.083h1.389V16.25h-1.39z"/></svg>')`,
+    },
+    ...theme.applyStyles('dark', {
+      backgroundColor: '#003892',
+    }),
   },
   '& .MuiSwitch-track': {
-    borderRadius: 26 / 2,
-    backgroundColor: '#9000FF',
     opacity: 1,
-    transition: theme.transitions.create(['background-color'], {
-      duration: 500,
-    }),
+    backgroundColor: '#9000FF',
+    borderRadius: 20 / 2,
     ...theme.applyStyles('dark', {
-      backgroundColor: '#39393D',
+      backgroundColor: '#8796A5',
     }),
   },
 }));
@@ -74,49 +70,52 @@ export default function Navbar() {
 
 
   return (
-    <nav className="bg-[#AC4AF8] py-1 px-2 flex justify-between items-center ">
+    <nav className="bg-[#AC4AF8] py-1 px-2 flex items-center text-white justify-between">
       <div>
         <Link href={`/dashboard`}>
           <Image 
             src={Logo}
             alt="Logo"
-            width={153}
-            height={34}
+            width={180}
           />
         </Link>
       </div>
-      <div className="bg-white rounded-[5px] py-1 px-1.5">
-        <FontAwesomeIcon 
-          className="mr-2"
-          icon={faMagnifyingGlass}
-          flip="horizontal"
-          color="#AC4AF8"
-        />
-        <input 
-          className="outline-none"
-          type="text" 
-          id="search-input" 
-          name="search-input" 
-        />
-      </div>
-      <ul className="flex gap-[15px] items-center">
-        <li className="relative">
+      <div>
+        <div className="bg-white rounded-[5px] py-1 px-1.5 w-[400px] justify-self-center">
           <FontAwesomeIcon 
-            icon={faBell}
+            className="mr-2"
+            icon={faMagnifyingGlass}
+            flip="horizontal"
+            color="#AC4AF8"
           />
-          <div className="absolute">
-            9+
-          </div>
+          <input 
+            className="outline-none"
+            type="text" 
+            id="search-input" 
+            name="search-input" 
+          />
+        </div>
+      </div>
+      <ul className="flex gap-[10px] items-center justify-self-end">
+        <li className="relative pr-3">
+          <button className="cursor-pointer w-[40px] h-[40px] rounded-[50%] hover:bg-[#9000FF] transition delay-30 ease">
+            <FontAwesomeIcon 
+              className="text-[25px]"
+              icon={faBell}
+            />
+            <div className="absolute top-[7px] right-[13px] text-[9px] bg-red-500 rounded-[9px] grid place-items-center w-[20px]">
+              <span>9+</span>
+            </div>
+          </button>
         </li>
         <li>
-          <span>한국어</span>
+          <span className="text-nowrap text-[13px] cursor-pointer hover:underline">한국어</span>
         </li>
         <li>
-          <IOSSwitch sx={{ m: 1 }} />
+          <MaterialUISwitch sx={{ m: 1 }} defaultChecked/>
         </li>
         <li>
-          <div>
-
+          <div className="rounded-[50%] overflow-hidden w-[45px] h-[45px] bg-[url(/profile-sample.jpg)] bg-cover bg-center">
           </div>
         </li>
       </ul>
