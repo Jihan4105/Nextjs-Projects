@@ -9,7 +9,7 @@ export default function DashboardLayout({ children }: {
       <Navbar />
       <div className="flex">
         <SideNav />
-        <div>
+        <div className="bg-[#FAF9F8] w-full h-[calc(100vh-59.33px)] p-4">
           { children }
         </div>
       </div>

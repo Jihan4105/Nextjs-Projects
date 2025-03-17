@@ -1,29 +1,29 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faBars } from "@fortawesome/free-solid-svg-icons"
-import { faSun } from "@fortawesome/free-regular-svg-icons"
-import { faStar } from "@fortawesome/free-regular-svg-icons"
-import { faCalendarDays } from "@fortawesome/free-regular-svg-icons"
-import { faUsers } from "@fortawesome/free-solid-svg-icons"
-import { faPowerOff } from "@fortawesome/free-solid-svg-icons"
+import Image from "next/image"
+import SunIcon from '@public/icons/Sun-icon.png'
+import MenuIcon from "@public/icons/menu-icon.png"
+import StarIcon from "@public/icons/star-icon.png"
+import CalendarIcon from "@public/icons/tearOffCalender-icon.png"
+import UserIcon from "@public/icons/user-icon.png"
+import PowerIcon from "@public/icons/power-icon.png"
 import Link from "next/link"
 
 export default function SideNav() {
   return (
-    <aside className="hidden w-[320px] h-[calc(100vh-59.33px)] shadow-[0.3px_0_4px_0_rgba(0,0,0,0.25)]">
+    <aside className="hidden relative min-w-[270px] h-[calc(100vh-59.33px)] shadow-[0.3px_0_4px_0_rgba(0,0,0,0.25)]">
       <ul>
         <li className="p-4 pt-8">
           <button className="cursor-pointer">
-            <FontAwesomeIcon
-              className="text-[25px]"
-              icon={faBars}
+            <Image 
+              src={MenuIcon}
+              alt="menu-icon"
             />
           </button>
         </li>
         <li className="hover:bg-stone-100">
           <Link href="#today" className="grid grid-cols-[3fr_11fr_2fr] p-4">
-            <FontAwesomeIcon 
-              className="text-[25px]"
-              icon={faSun}
+            <Image 
+              src={SunIcon}
+              alt="sun-icon"
             />
             <p>Today&apos;s Todo</p>
             <span className="pr-4">9</span>
@@ -31,9 +31,9 @@ export default function SideNav() {
         </li>
         <li className="hover:bg-stone-100">
           <Link href="#importants" className="grid grid-cols-[3fr_11fr_2fr] p-4">
-            <FontAwesomeIcon 
-              className="text-[25px]"
-              icon={faStar}
+            <Image 
+              src={StarIcon}
+              alt="star-icon"
             />
             <p>Importants</p>
             <span className="pr-4"></span>
@@ -41,9 +41,9 @@ export default function SideNav() {
         </li>
         <li className="hover:bg-stone-100">
           <Link href="#schedule" className="grid grid-cols-[3fr_11fr_2fr] p-4">
-            <FontAwesomeIcon 
-              className="text-[25px] ml-0.5"
-              icon={faCalendarDays}
+            <Image 
+              src={CalendarIcon}
+              alt="calendar-icon"
             />
             <p>Schedule</p>
             <span className="pr-4">12</span>
@@ -51,9 +51,9 @@ export default function SideNav() {
         </li>
         <li className="hover:bg-stone-100">
           <Link href="#coworks" className="grid grid-cols-[3fr_11fr_2fr] p-4">
-            <FontAwesomeIcon 
-              className="text-[25px]"
-              icon={faUsers}
+            <Image 
+              src={UserIcon}
+              alt="user-icon"
             />
             <p>Co-works</p>
             <span className="pr-4">11</span>
@@ -62,9 +62,9 @@ export default function SideNav() {
         <hr className="w-[80%] justify-self-center text-[#E1DFDD] my-3"/>
         <li className="hover:bg-stone-100">
           <Link href="#signout" className="grid grid-cols-[3fr_13fr] p-4">
-            <FontAwesomeIcon 
-              className="text-[25px]"
-              icon={faPowerOff}
+            <Image 
+              src={PowerIcon}
+              alt="power-icon"
             />
             <p>Sign Out</p>
           </Link>

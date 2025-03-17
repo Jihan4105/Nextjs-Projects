@@ -5,11 +5,9 @@ import Link from "next/link"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
 import { faBell } from "@fortawesome/free-regular-svg-icons"
-import { faGear } from "@fortawesome/free-solid-svg-icons"
 import { styled } from '@mui/material/styles';
 import Switch from '@mui/material/Switch';
 import Logo from "@public/small-white-logo.png"
-import profileSample from "@public/profile-sample.jpg"
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -97,31 +95,23 @@ export default function Navbar() {
           />
         </div>
       </div>
-      <ul className="flex gap-[10px] items-center">
-        <li className="hidden md:block relative pr-3">
+      <ul className="flex gap-[1px] sm:gap-[10px] items-center">
+        <li className="relative sm:mr-0 mr-2">
           <button className="cursor-pointer w-[40px] h-[40px] rounded-[50%] hover:bg-[#9000FF] transition delay-30 ease">
             <FontAwesomeIcon 
               className="text-[25px]"
               icon={faBell}
             />
-            <div className="absolute top-[7px] right-[13px] text-[9px] bg-red-500 rounded-[9px] grid place-items-center w-[20px]">
+            <div className="absolute top-[7px] right-[2px] sm:right-[1px] text-[9px] bg-red-500 rounded-[9px] grid place-items-center w-[20px]">
               <span>9+</span>
             </div>
           </button>
         </li>
-        <li className="hidden md:block">
+        <li className="block">
           <span className="text-nowrap text-[13px] cursor-pointer hover:underline">한국어</span>
         </li>
-        <li className="hidden md:block">
+        <li className="block">
           <MaterialUISwitch sx={{ m: 1 }} defaultChecked/>
-        </li>
-        <li className="md:hidden">
-          <button className="cursor-pointer w-[40px] h-[40px] rounded-[50%] hover:bg-[#9000FF] transition delay-30 ease">
-            <FontAwesomeIcon 
-              className="text-white"
-              icon={faGear}
-            />
-          </button>
         </li>
         <li>
           <div className="rounded-[50%] overflow-hidden w-[45px] h-[45px] bg-[url(/profile-sample.jpg)] bg-cover bg-center">
