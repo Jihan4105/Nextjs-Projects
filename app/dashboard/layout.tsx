@@ -7,9 +7,11 @@ export default function DashboardLayout({ children }: {
   return (
     <main>
       <Navbar />
-      <SideNav />
-      <div>
-        { children }
+      <div className="flex">
+        <SideNav />
+        <div>
+          { children }
+        </div>
       </div>
     </main>
   )

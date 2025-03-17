@@ -5,6 +5,7 @@ import Link from "next/link"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
 import { faBell } from "@fortawesome/free-regular-svg-icons"
+import { faGear } from "@fortawesome/free-solid-svg-icons"
 import { styled } from '@mui/material/styles';
 import Switch from '@mui/material/Switch';
 import Logo from "@public/small-white-logo.png"
@@ -80,8 +81,8 @@ export default function Navbar() {
           />
         </Link>
       </div>
-      <div>
-        <div className="bg-white rounded-[5px] py-1 px-1.5 w-[400px] justify-self-center">
+      <div className="justify-self-start hidden md:block">
+        <div className="bg-white rounded-[5px] py-1 h-[32px] px-1.5 min-w-[243px] lg:min-w-[400px] cursor-pointer ">
           <FontAwesomeIcon 
             className="mr-2"
             icon={faMagnifyingGlass}
@@ -89,15 +90,15 @@ export default function Navbar() {
             color="#AC4AF8"
           />
           <input 
-            className="outline-none"
+            className="outline-none text-black"
             type="text" 
             id="search-input" 
             name="search-input" 
           />
         </div>
       </div>
-      <ul className="flex gap-[10px] items-center justify-self-end">
-        <li className="relative pr-3">
+      <ul className="flex gap-[10px] items-center">
+        <li className="hidden md:block relative pr-3">
           <button className="cursor-pointer w-[40px] h-[40px] rounded-[50%] hover:bg-[#9000FF] transition delay-30 ease">
             <FontAwesomeIcon 
               className="text-[25px]"
@@ -108,11 +109,19 @@ export default function Navbar() {
             </div>
           </button>
         </li>
-        <li>
+        <li className="hidden md:block">
           <span className="text-nowrap text-[13px] cursor-pointer hover:underline">한국어</span>
         </li>
-        <li>
+        <li className="hidden md:block">
           <MaterialUISwitch sx={{ m: 1 }} defaultChecked/>
+        </li>
+        <li className="md:hidden">
+          <button className="cursor-pointer w-[40px] h-[40px] rounded-[50%] hover:bg-[#9000FF] transition delay-30 ease">
+            <FontAwesomeIcon 
+              className="text-white"
+              icon={faGear}
+            />
+          </button>
         </li>
         <li>
           <div className="rounded-[50%] overflow-hidden w-[45px] h-[45px] bg-[url(/profile-sample.jpg)] bg-cover bg-center">

@@ -4,59 +4,70 @@ import { faSun } from "@fortawesome/free-regular-svg-icons"
 import { faStar } from "@fortawesome/free-regular-svg-icons"
 import { faCalendarDays } from "@fortawesome/free-regular-svg-icons"
 import { faUsers } from "@fortawesome/free-solid-svg-icons"
+import { faPowerOff } from "@fortawesome/free-solid-svg-icons"
+import Link from "next/link"
 
 export default function SideNav() {
   return (
-    <aside className="w-[340px] flex flex-col">
+    <aside className="hidden w-[320px] h-[calc(100vh-59.33px)] shadow-[0.3px_0_4px_0_rgba(0,0,0,0.25)]">
       <ul>
         <li className="p-4 pt-8">
-          <button>
+          <button className="cursor-pointer">
             <FontAwesomeIcon
               className="text-[25px]"
               icon={faBars}
-              
             />
           </button>
         </li>
-        <li className="p-4 flex justify-between items-center hover:bg-stone-100">
-          <div className="flex">
+        <li className="hover:bg-stone-100">
+          <Link href="#today" className="grid grid-cols-[3fr_11fr_2fr] p-4">
             <FontAwesomeIcon 
-              className="text-[25px] mr-3"
+              className="text-[25px]"
               icon={faSun}
             />
             <p>Today&apos;s Todo</p>
-          </div>
-          <span>9</span>
+            <span className="pr-4">9</span>
+          </Link>
         </li>
-        <li className="p-4 flex justify-between items-center hover:bg-stone-100">
-          <div className="flex">
+        <li className="hover:bg-stone-100">
+          <Link href="#importants" className="grid grid-cols-[3fr_11fr_2fr] p-4">
             <FontAwesomeIcon 
-              className="text-[25px] mr-3"
+              className="text-[25px]"
               icon={faStar}
             />
             <p>Importants</p>
-          </div>
-          <span></span>
+            <span className="pr-4"></span>
+          </Link>
         </li>
-        <li className="p-4 flex justify-between items-center hover:bg-stone-100">
-          <div className="flex">
+        <li className="hover:bg-stone-100">
+          <Link href="#schedule" className="grid grid-cols-[3fr_11fr_2fr] p-4">
             <FontAwesomeIcon 
-              className="text-[25px] mr-3"
+              className="text-[25px] ml-0.5"
               icon={faCalendarDays}
             />
             <p>Schedule</p>
-          </div>
-          <span>12</span>
+            <span className="pr-4">12</span>
+          </Link>
         </li>
-        <li className="p-4 flex justify-between items-center hover:bg-stone-100">
-          <div className="flex">
+        <li className="hover:bg-stone-100">
+          <Link href="#coworks" className="grid grid-cols-[3fr_11fr_2fr] p-4">
             <FontAwesomeIcon 
-              className="text-[25px] mr-3"
+              className="text-[25px]"
               icon={faUsers}
             />
-            <p>Today&apos;s Todo</p>
-          </div>
-          <span></span>
+            <p>Co-works</p>
+            <span className="pr-4">11</span>
+          </Link>
+        </li>
+        <hr className="w-[80%] justify-self-center text-[#E1DFDD] my-3"/>
+        <li className="hover:bg-stone-100">
+          <Link href="#signout" className="grid grid-cols-[3fr_13fr] p-4">
+            <FontAwesomeIcon 
+              className="text-[25px]"
+              icon={faPowerOff}
+            />
+            <p>Sign Out</p>
+          </Link>
         </li>
       </ul>
     </aside>
