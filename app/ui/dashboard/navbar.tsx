@@ -2,9 +2,6 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
-import { faBell } from "@fortawesome/free-regular-svg-icons"
 import { styled } from '@mui/material/styles';
 import Switch from '@mui/material/Switch';
 import Logo from "@public/small-white-logo.png"
@@ -66,8 +63,6 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 }));
 
 export default function Navbar() {
-
-
   return (
     <nav className="bg-[#AC4AF8] py-1 px-2 flex items-center text-white justify-between">
       <div>
@@ -81,11 +76,8 @@ export default function Navbar() {
       </div>
       <div className="justify-self-start hidden md:block">
         <div className="bg-white rounded-[5px] py-1 h-[32px] px-1.5 min-w-[243px] lg:min-w-[400px] cursor-pointer ">
-          <FontAwesomeIcon 
-            className="mr-2"
-            icon={faMagnifyingGlass}
-            flip="horizontal"
-            color="#AC4AF8"
+          <Icon 
+            io
           />
           <input 
             className="outline-none text-black"
@@ -98,10 +90,10 @@ export default function Navbar() {
       <ul className="flex gap-[1px] sm:gap-[10px] items-center">
         <li className="relative sm:mr-0 mr-2">
           <button className="cursor-pointer w-[40px] h-[40px] rounded-[50%] hover:bg-[#9000FF] transition delay-30 ease">
-            <FontAwesomeIcon 
+            {/* <FontAwesomeIcon 
               className="text-[25px]"
               icon={faBell}
-            />
+            /> */}
             <div className="absolute top-[7px] right-[2px] sm:right-[1px] text-[9px] bg-red-500 rounded-[9px] grid place-items-center w-[20px]">
               <span>9+</span>
             </div>

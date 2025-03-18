@@ -4,6 +4,7 @@ import "./globals.css";
 
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import Script from "next/script";
 config.autoAddCss = false
 
 export const metadata: Metadata = {
@@ -25,6 +26,10 @@ export default function RootLayout({
         className={`${inter.className} antialiased`}
       >
         {children}
+
+        {/* IonIcons */}
+        <Script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" async/>
+        <Script noModule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" async/>
       </body>
     </html>
   );
