@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { inter } from "@ui/fonts";
+
 import "./globals.css";
 
 import { config } from '@fortawesome/fontawesome-svg-core'

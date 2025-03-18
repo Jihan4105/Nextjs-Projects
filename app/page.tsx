@@ -96,6 +96,7 @@ export default function Page() {
               icon={faUser} 
             />
             Sign Up As User
+            <ion-icon name="home-outline"></ion-icon>
           </button>
         </form>
       </div>
