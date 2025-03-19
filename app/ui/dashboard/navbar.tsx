@@ -88,10 +88,6 @@ export default function Navbar() {
       <ul className="flex gap-[1px] sm:gap-[10px] items-center">
         <li className="relative sm:mr-0 mr-2">
           <button className="cursor-pointer w-[40px] h-[40px] rounded-[50%] hover:bg-[#9000FF] transition delay-30 ease grid place-items-center">
-            {/* <FontAwesomeIcon 
-              className="text-[25px]"
-              icon={faBell}
-            /> */}
             <GoBell className="text-[25px]"/>
             <div className="absolute top-[7px] right-[2px] sm:right-[-1px] text-[9px] bg-red-500 rounded-[6.7px] grid place-items-center w-[20px] border-red-500">
               <span>9+</span>

@@ -1,8 +1,11 @@
-import Image from "next/image"
 import { BiSort } from "react-icons/bi";
 import { FcInspection } from "react-icons/fc";
-import PlusIcon from "@public/icons/plus-icon.png"
 import { TfiPlus } from "react-icons/tfi";
+import { IoCalendarOutline } from "react-icons/io5";
+import { PiBellRinging } from "react-icons/pi";
+import { CiRepeat } from "react-icons/ci";
+import { BsDot } from "react-icons/bs";
+import { BiNote } from "react-icons/bi";
 
 export default function Page() {
   return (
@@ -31,7 +34,10 @@ export default function Page() {
           </div>
         </div>
       </div>
+
       <p>Mon Mar 10 2025</p>
+
+      {/* AddTodo */}
       <div>
         <div>
           <button>
@@ -41,7 +47,44 @@ export default function Page() {
         </div>
         <div>
           <div>
-            
+            <button>
+              <IoCalendarOutline className="text-[20px]"/>
+            </button>
+            <button>
+              <PiBellRinging className="text-[20px]"/>
+            </button>
+            <button>
+            <CiRepeat className="text-[20px]"/>
+            </button>
+          </div>
+          <button>
+            Add
+          </button>
+        </div>
+      </div>
+
+      {/* ListItems */}
+      <div>
+        <div className="checkbox-wrapper-24">
+          <input type="checkbox" id="check-24" name="check" value="" />
+          <label htmlFor="check-24">
+            <span></span>
+          </label>
+        </div>
+        <div>
+          <p>Todo 1</p>
+          <div>
+            <span>
+              <IoCalendarOutline />
+              Tomorrow
+            </span>
+            <BsDot />
+            <span>
+              <CiRepeat />
+              Everyday              
+            </span>
+            <BsDot />
+            <BiNote />
           </div>
         </div>
       </div>
