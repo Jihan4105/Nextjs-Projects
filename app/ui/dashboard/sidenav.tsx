@@ -8,7 +8,7 @@ import Link from "next/link"
 
 export default function SideNav() {
   return (
-    <aside className="relative min-w-[270px] h-[calc(100vh-59.33px)] shadow-[0.3px_0_4px_0_rgba(0,0,0,0.25)]">
+    <aside className="hidden relative min-w-[270px] h-[calc(100vh-59.33px)] shadow-[0.3px_0_4px_0_rgba(0,0,0,0.25)]">
       <ul>
         <li className="p-4 pt-8">
           <button className="cursor-pointer">

@@ -6,6 +6,7 @@ import { styled } from '@mui/material/styles';
 import Switch from '@mui/material/Switch';
 import Logo from "@public/small-white-logo.png"
 import { GoBell } from "react-icons/go";
+import { IoIosSearch } from "react-icons/io";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -76,7 +77,8 @@ export default function Navbar() {
         </Link>
       </div>
       <div className="justify-self-start hidden md:block">
-        <div className="bg-white rounded-[5px] py-1 h-[32px] px-1.5 min-w-[243px] lg:min-w-[400px] cursor-pointer ">
+        <div className="flex items-center bg-white rounded-[5px] py-1 h-[32px] px-1.5 min-w-[243px] lg:min-w-[400px] cursor-pointer ">
+          <IoIosSearch />
           <input 
             className="outline-none text-black"
             type="text" 
