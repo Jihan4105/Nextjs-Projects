@@ -1,8 +1,7 @@
 import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons/faChevronRight";
-import { faGoogle } from "@fortawesome/free-brands-svg-icons";
-import { faUser } from "@fortawesome/free-regular-svg-icons";
+import { FaChevronRight } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa";
+import { FaRegUserCircle } from "react-icons/fa";
 import largeLogo from "@public/large-white-logo.png";
 import vectorDown from "@public/form-vector-down.svg";
 import vectorUp from "@public/form-vector-up.svg";
@@ -59,7 +58,7 @@ export default function Page() {
           <h1 className="text-[42px] sm:text-[45px] font-bold mb-[5px] sm:mb-[36px] xl:self-start">Sign In</h1>
           <div className="bg-gradient-to-r from-[#8353C1] to-[#E136C0] pb-[1px] w-full mb-5">
             <input 
-              className="w-full py-3 bg-[#FFFBEB] outline-none h-full"
+              className="w-full py-3 bg-[#FFFBEB] outline-none h-full placeholder:text-[#D9D9D9]"
               type="text" 
               id="email" 
               name="email" 
@@ -68,7 +67,7 @@ export default function Page() {
           </div>
           <div className="bg-gradient-to-r from-[#8353C1] to-[#E136C0] pb-[1px] w-full mb-[45px] sm:mb-[57px]">
             <input 
-              className="w-full py-3 bg-[#FFFBEB] outline-none"
+              className="w-full py-3 bg-[#FFFBEB] outline-none placeholder:text-[#D9D9D9]"
               type="password" 
               id="password" 
               name="password" 
@@ -77,26 +76,20 @@ export default function Page() {
           </div>
           <button className="relative bg-gradient-to-r from-[#8353C1] to-[#E136C0] w-full py-3.5 font-extralight tracking-[2px] text-white mb-[40px] sm:mb-[51px] cursor-pointer">
             <span>CONTINUE</span>
-            <FontAwesomeIcon
+            {/* <FontAwesomeIcon
               className="absolute right-[5%] top-[50%] translate-y-[-50%] text-2xl"
               icon={faChevronRight} 
-            />
+            /> */}
+            <FaChevronRight className="absolute right-[5%] top-[50%] translate-y-[-50%] text-2xl"/>
           </button>
           <p className="text-[#c7c7c7] mb-[40px] sm:mb-[51px]">Or Connect with</p>
           <button className="flex justify-center items-center w-full py-3.5 text-white bg-gradient-to-r from-[#D40015] to-[#FF5E66] cursor-pointer">
-            <FontAwesomeIcon 
-              className="mr-2 text-2xl"
-              icon={faGoogle} 
-            />
+            <FaGoogle className="mr-2 text-2xl"/>
             Sign In With Google
           </button>
           <button className="flex justify-center items-center w-full py-3.5 text-white bg-gradient-to-r from-[#707070] to-[#8F8F8F] cursor-pointer mt-[27px]">
-            <FontAwesomeIcon 
-              className="mr-2 text-2xl"
-              icon={faUser} 
-            />
+            <FaRegUserCircle className="mr-2 text-2xl"/>
             Sign Up As User
-            <ion-icon name="home-outline"></ion-icon>
           </button>
         </form>
       </div>

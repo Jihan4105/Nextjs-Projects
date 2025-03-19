@@ -1,7 +1,8 @@
 import Image from "next/image"
-import SortIcon from "@public/icons/sort-icon.png"
-import ReviewIcon from "@public/icons/review-icon.png"
+import { BiSort } from "react-icons/bi";
+import { FcInspection } from "react-icons/fc";
 import PlusIcon from "@public/icons/plus-icon.png"
+import { TfiPlus } from "react-icons/tfi";
 
 export default function Page() {
   return (
@@ -21,17 +22,11 @@ export default function Page() {
         </div>
         <div>
           <div>
-            <Image 
-              src={SortIcon}
-              alt="sort-arrow-icon"
-            />
+            <BiSort className="text-[20px]"/>
             <span>Sort</span>
           </div>
           <div>
-            <Image 
-              src={ReviewIcon}
-              alt="review-icon"
-            />
+            <FcInspection className="text-[20px]"/>
             <span>Review Plan</span>
           </div>
         </div>
@@ -40,12 +35,9 @@ export default function Page() {
       <div>
         <div>
           <button>
-            <Image 
-              src={PlusIcon}
-              alt="plus-icon"
-            />
+            <TfiPlus className="text-[25px] text-[#C374FF]"/>
           </button>
-          <input type="text" id="task-title" name="task-title" placeholder="Add Task"/>
+          <input className="placeholder:text-[#C374FF]" type="text" id="task-title" name="task-title" placeholder="Add Task"/>
         </div>
         <div>
           <div>

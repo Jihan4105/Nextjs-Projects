@@ -5,6 +5,7 @@ import Link from "next/link"
 import { styled } from '@mui/material/styles';
 import Switch from '@mui/material/Switch';
 import Logo from "@public/small-white-logo.png"
+import { GoBell } from "react-icons/go";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -76,9 +77,6 @@ export default function Navbar() {
       </div>
       <div className="justify-self-start hidden md:block">
         <div className="bg-white rounded-[5px] py-1 h-[32px] px-1.5 min-w-[243px] lg:min-w-[400px] cursor-pointer ">
-          <Icon 
-            io
-          />
           <input 
             className="outline-none text-black"
             type="text" 
@@ -89,12 +87,13 @@ export default function Navbar() {
       </div>
       <ul className="flex gap-[1px] sm:gap-[10px] items-center">
         <li className="relative sm:mr-0 mr-2">
-          <button className="cursor-pointer w-[40px] h-[40px] rounded-[50%] hover:bg-[#9000FF] transition delay-30 ease">
+          <button className="cursor-pointer w-[40px] h-[40px] rounded-[50%] hover:bg-[#9000FF] transition delay-30 ease grid place-items-center">
             {/* <FontAwesomeIcon 
               className="text-[25px]"
               icon={faBell}
             /> */}
-            <div className="absolute top-[7px] right-[2px] sm:right-[1px] text-[9px] bg-red-500 rounded-[9px] grid place-items-center w-[20px]">
+            <GoBell className="text-[25px]"/>
+            <div className="absolute top-[7px] right-[2px] sm:right-[-1px] text-[9px] bg-red-500 rounded-[6.7px] grid place-items-center w-[20px] border-red-500">
               <span>9+</span>
             </div>
           </button>
