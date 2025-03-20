@@ -1,3 +1,4 @@
+import clsx from "clsx"
 import { IoMenuOutline } from "react-icons/io5";
 import { IoSunnyOutline } from "react-icons/io5";
 import { IoIosStarOutline } from "react-icons/io";
@@ -6,9 +7,17 @@ import { IoPeopleOutline } from "react-icons/io5";
 import { CiPower } from "react-icons/ci";
 import Link from "next/link"
 
-export default function SideNav() {
+export default function SideNav({ status }: {
+  status: "hidden" | "show"
+}) {
   return (
-    <aside className="hidden relative min-w-[270px] h-[calc(100vh-59.33px)] shadow-[0.3px_0_4px_0_rgba(0,0,0,0.25)]">
+    <aside id="sidenav" className={clsx(
+      "relative min-w-[270px] h-[calc(100vh-59.33px)] shadow-[0.3px_0_4px_0_rgba(0,0,0,0.25)]",
+      {
+        "hidden": status === "hidden",
+        "block": status === "show",
+      },
+    )}>
       <ul>
         <li className="p-4 pt-8">
           <button className="cursor-pointer">

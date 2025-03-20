@@ -44,7 +44,6 @@ export default function Page() {
       </div>
 
       {/* AddTodo */}
-      {/* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */}
       <div className="border border-[#E1DFDD] rounded-[5px] mb-4 shadow-[0_3px_5px_0_rgba(0,0,0,0.24)]">
         <div className="p-3 flex items-center">
           <button className="pr-3">
@@ -52,15 +51,11 @@ export default function Page() {
           </button>
           <input className="placeholder:text-[#C374FF]" type="text" id="task-title" name="task-title" placeholder="Add Task" autoComplete="off"/>
         </div>
-        <div className="p-3 border-t border-[#E1DFDD] flex justify-between">
+        <div className="p-3 border-t border-[#E1DFDD] flex justify-between bg-[#FAF9F8]">
           <div className="flex gap-2">
             <button data-tooltip-target="term-tooltip" className="cursor-pointer">
               <IoCalendarOutline className="text-[20px]"/>
             </button>
-            <div id="term-tooltip" role="tooltip" className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-xs opacity-0 tooltip dark:bg-gray-700">
-              Term
-              <div className="tooltip-arrow" data-popper-arrow></div>
-            </div>
             <button className="cursor-pointer">
               <PiBellRinging className="text-[20px]"/>
             </button>
@@ -68,14 +63,14 @@ export default function Page() {
             <CiRepeat className="text-[20px]"/>
             </button>
           </div>
-          <button>
+          <button className="border px-1 border-[#E1DFDD] cursor-pointer">
             Add
           </button>
         </div>
       </div>
 
       {/* ListItems */}
-      <div>
+      <div className="border border-[#E1DFDD] rounded-[5px] mb-4 shadow-[0_3px_5px_0_rgba(0,0,0,0.24)] p-3 grid grid-cols-[auto_1fr_auto] items-center">
         <div className="checkbox-wrapper-24">
           <input type="checkbox" id="check-24" name="check" value="" />
           <label htmlFor="check-24">
@@ -83,23 +78,23 @@ export default function Page() {
           </label>
         </div>
         <div>
-          <p>Todo 1</p>
-          <div>
-            <span>
+          <p className="text-[18px]">Todo 1</p>
+          <div className="flex items-center text-[#999999]">
+            <div className="flex items-center gap-1">
               <IoCalendarOutline />
-              Tomorrow
-            </span>
+              <span>Tomorrow</span>
+            </div>
             <BsDot />
-            <span>
+            <div className="flex items-center gap-1">
               <CiRepeat />
-              Everyday              
-            </span>
+              <span>Everyday</span>
+            </div>
             <BsDot />
             <BiNote />
           </div>
         </div>
-        <button>
-          <IoIosStarOutline />
+        <button className="cursor-pointer">
+          <IoIosStarOutline className="text-[20px] text-[#c374ff]"/>
         </button>
       </div>
     </>

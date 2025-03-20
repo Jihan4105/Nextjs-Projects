@@ -38,8 +38,8 @@ img {
   display: inline-block;
   position: relative;
   background-color: transparent;
-  width: 29px;
-  height: 29px;
+  width: 25px;
+  height: 25px;
   transform-origin: center;
   border: 2px solid #c374ff;
   border-radius: 50%;
@@ -56,8 +56,8 @@ img {
   background: #c374ff;
   position: absolute;
   transform: rotate(45deg);
-  top: 13px;
-  left: 9px;
+  top: 9px;
+  left: 7px;
   transition: width 50ms ease 50ms;
   transform-origin: 0% 0%;
 }
@@ -69,8 +69,8 @@ img {
   background: #c374ff;
   position: absolute;
   transform: rotate(305deg);
-  top: 16px;
-  left: 10px;
+  top: 13px;
+  left: 8px;
   transition: width 50ms ease;
   transform-origin: 0% 0%;
 }
